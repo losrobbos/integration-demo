@@ -5,20 +5,22 @@
 ### Starting with Backend
 
 - Create .env file (in your main project folder)
-  - Put in the URL of the frontend (usually http://localhost:5000)
-  - Important: Never put a SLASH at the end of the url (so not :5000/ please :))
-- Copy the .env file to a .env.sample file
+  - Put in the URL of the frontend (usually http://localhost:3000)
+  - Important: Never put a SLASH at the end of the url (so not :3000/ please :))
+- Alternative: Copy the .env.sample file to a .env file
   - this way your colleagues who clone your repository will have
   - an example of an .env file and can put in their own values there
   - e.g. their own ATLAS database url
-- Install dotenv
+- Install dotenv & cors: `npm i dotenv cors`
 - Load .env at beginning of your server file:
   - `const env = require("dotenv").config()`
 - For easy check if env vars are loaded correctl, console log them:
   - `console.log(env)`
 - Create a .gitignore file
   - ignore .env and node_modules
-
+- Setup CORS middleware to allow access from frontend:
+  - `app.use( cors({origin: process.env.FRONTEND_ORIGIN, credentials: true }) )`
+ 
 
 ### Deploy Backend
 

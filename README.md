@@ -69,21 +69,23 @@ In case you exchange mainly JSON between your Frontend and Backend Axios simplif
 Set URL to backend once
 `axios.default.baseURL = process.env.REACT_APP_API_URL`
 
-Ignore the .env file by creating a .vercelignore file and put ".env" inside
+### Deployment
+
+Let vercel ignore the .env file by creating a .vercelignore file and put ".env" inside
 
 Deploy the frontend:
 `vercel`
 
-Vercel Dashboard
-- Select project
+Go to Vercel Dashboard: vercel.com
+- Select the created frontend project
 - Click "Settings"
 - Click "Environment variables"
   - place your backend URL here (REACT_APP_API_URL)
 
-Re-Deploy frontend:
+Re-Deploy frontend (this way env variables are loaded):
 - `vercel --prod`
 
-Refresh frontend in browser and check if API URL is printed
+Refresh deployed frontend in browser. And check if API URL of Backend is printed to console.
 
 #### Allow deployed frontend access to deployed backend
 

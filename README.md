@@ -62,6 +62,8 @@ Check if the routes are working fine :)
   - configure the URL to the backend:
     - VITE_API_URL=`yourDeployedBackendUrl`
 
+Now start the app and check if you can reach your deployed backend with your fetch calls (e.g. on a button click)
+
 #### Using Axios
 
 In case you exchange mainly JSON between your Frontend and Backend Axios simplifies the integration between Frontend and the API.
@@ -71,7 +73,7 @@ In case you exchange mainly JSON between your Frontend and Backend Axios simplif
 Set URL to backend once
 `axios.default.baseURL = process.env.REACT_APP_API_URL`
 
-### Deployment
+### Deploy Frontend
 
 Let vercel ignore the .env file by creating a .vercelignore file and put ".env" inside
 

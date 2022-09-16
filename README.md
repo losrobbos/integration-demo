@@ -5,20 +5,22 @@
 ### Starting with Backend
 
 - Create .env file (in your main project folder)
-  - Put in the URL of the frontend (usually http://localhost:5000)
-  - Important: Never put a SLASH at the end of the url (so not :5000/ please :))
-- Copy the .env file to a .env.sample file
+  - Put in the URL of the frontend (usually http://localhost:3000)
+  - Important: Never put a SLASH at the end of the url (so not :3000/ please :))
+- Alternative: Copy the .env.sample file to a .env file
   - this way your colleagues who clone your repository will have
   - an example of an .env file and can put in their own values there
   - e.g. their own ATLAS database url
-- Install dotenv
+- Install dotenv & cors: `npm i dotenv cors`
 - Load .env at beginning of your server file:
   - `const env = require("dotenv").config()`
 - For easy check if env vars are loaded correctl, console log them:
   - `console.log(env)`
 - Create a .gitignore file
   - ignore .env and node_modules
-
+- Setup CORS middleware to allow access from frontend:
+  - `app.use( cors({origin: process.env.FRONTEND_ORIGIN, credentials: true }) )`
+ 
 
 ### Deploy Backend
 
@@ -69,21 +71,23 @@ In case you exchange mainly JSON between your Frontend and Backend Axios simplif
 Set URL to backend once
 `axios.default.baseURL = process.env.REACT_APP_API_URL`
 
-Ignore the .env file by creating a .vercelignore file and put ".env" inside
+### Deployment
+
+Let vercel ignore the .env file by creating a .vercelignore file and put ".env" inside
 
 Deploy the frontend:
 `vercel`
 
-Vercel Dashboard
-- Select project
+Go to Vercel Dashboard: vercel.com
+- Select the created frontend project
 - Click "Settings"
 - Click "Environment variables"
   - place your backend URL here (REACT_APP_API_URL)
 
-Re-Deploy frontend:
+Re-Deploy frontend (this way env variables are loaded):
 - `vercel --prod`
 
-Refresh frontend in browser and check if API URL is printed
+Refresh deployed frontend in browser. And check if API URL of Backend is printed to console.
 
 #### Allow deployed frontend access to deployed backend
 

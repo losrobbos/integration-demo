@@ -34,7 +34,12 @@ Vercel will deploy ALL your files in your folder. So it will ignore your .gitign
 
 So create a file .vercelignore and put ".env" inside, so it will not upload your dotenv.
 
-Also you need a vercel.json file (see the guide above)
+Content of .vercelignore:
+```
+.env
+```
+
+Also you need a vercel.json file (see the guide / link above)
 
 Now create a Vercel app in the terminal:
 - `vercel link`
@@ -76,6 +81,11 @@ Set URL to backend once
 ### Deploy Frontend
 
 Let vercel ignore the .env file by creating a .vercelignore file and put ".env" inside
+
+Content of .vercelignore:
+```
+.env
+```
 
 Deploy the frontend:
 `vercel`

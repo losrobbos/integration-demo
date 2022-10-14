@@ -62,12 +62,15 @@ Check if the routes are working fine :)
   - all variable names need to start with "REACT_APP_"
   - configure the URL to the backend:   
     - REACT_APP_API_URL=`yourDeployedBackendUrl`
+  - in the code the variable is available via process.env.REACT_APP_API_URL
 - If you use Vite to create a React project:
   - all variable names need to start with "VITE_"
   - configure the URL to the backend:
     - VITE_API_URL=`yourDeployedBackendUrl`
+  - in the code the variable is available via import.meta.env.REACT_APP_API_URL
 
 Now start the app and check if you can reach your deployed backend with your fetch calls (e.g. on a button click)
+
 
 #### Using Axios
 

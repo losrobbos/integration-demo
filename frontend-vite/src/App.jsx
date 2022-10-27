@@ -11,13 +11,13 @@ function App() {
   // fetch vs axios ???
   const fetchData = async () => {
 
-    // const resp = await axios.get(`${API_URL}/todos`);
-    // console.log(resp.data);
+    const resp = await axios.get(`${API_URL}/animals`);
+    console.log(resp.data);
 
-    const resp = await axios.post(`/todos`, 
-      { email: "rob@rob.com", password: "hey123" }
-    );
-    console.log(resp.data)
+    // const resp = await axios.post(`/animals`, 
+    //   { name: "Sleezy Sloth" }
+    // );
+    // console.log(resp.data)
   }
 
   return (

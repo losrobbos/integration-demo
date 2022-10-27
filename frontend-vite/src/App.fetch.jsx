@@ -8,7 +8,7 @@ function App() {
     const API_URL = import.meta.env.VITE_API_URL;
     console.log({ API_URL })
     
-    const resp = await fetch(`${API_URL}/todos`);
+    const resp = await fetch(`${API_URL}/animals`);
     const data = await resp.json()
     console.log(data)
   }
